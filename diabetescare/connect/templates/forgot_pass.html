@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <section class="container forms">
+      <div class="form login">
+        <div class="form-content">
+          <header>Reset Password</header>
+          <span class="title">Please enter your new password.</span>
+          <form action="#">
+            <!-- Password -->
+            <div class="field input-field">
+              <input
+                type="password"
+                placeholder="Create new password"
+                class="password"
+              />
+            </div>
+
+            <!-- Confirm password -->
+            <div class="field input-field">
+              <input
+                type="password"
+                placeholder="Confirm password"
+                class="password"
+              />
+            </div>
+
+            <div class="field button-field">
+              <button class="login-link" formaction="/login">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

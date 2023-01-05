@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='scnd_bootstrap.min.css')}}">
+
+    <!-- <link rel="stylesheet" href="css/custom_css/homes.css"/>
+    <link rel="stylesheet" href="css/custom_css/satisfactionPage.css"/>
+    <link rel="stylesheet" href="css/custom_css/linkButtons.css"/> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='homes.css')}}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='satisfactionPage.css')}}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='linkButtons.css')}}"> 
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+    <!-- <script src="{{url_for('static', filename='jquery.min.js')}}"></script> -->
+
+    <!-- <script type="text/javascript" src="js/forDiscover.js"></script>
+    <script type="text/javascript" src="js/script.js"></script> -->
+<!-- 
+    <script src="{{url_for('static', filename='forDiscover.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script> -->
+
+
+    <title>Mental Health</title>
+</head>
+<body class="preload">
+
+<header class="header">
+    <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+    </button>
+    <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+    </div>
+</header>
+
+<nav class="nav">
+    <div class="nav_links">
+        <div class="logo-details">
+            <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+            <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+            <i class="material-icons">grid_view</i>
+            Home
+        </a>
+        <a href="/diet" class="nav_link">
+            <i class="material-icons">restaurant</i>
+            Diet
+        </a>
+        <a href="/activity" class="nav_link">
+            <i class="material-icons">fitness_center</i>
+            Activities
+        </a>
+        <a href="/journal" class="nav_link">
+            <i class="material-icons">spa</i>
+            Mental Health
+        </a>
+        <!-- <a href="about.html" class="nav_link">
+            <i class="material-icons">info</i>
+            About
+        </a>
+        <a href="profile.html" class="nav_link">
+            <i class="material-icons">person</i>
+            Profile
+        </a> -->
+        <a href="#" class="nav_link">
+            <i class="material-icons">logout</i>Logout
+        </a>
+    </div>
+
+    <div class="nav_overlay"></div>
+</nav>
+
+  <section class="three-button">
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <a href="/journal" class="btn btn_heading">
+          <span>Journal</span>
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="/myActivities" class="btn btn_heading">
+          <span>Activities</span>
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="/discover" class="btn btn_heading">
+          <span>Discover</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- home section starts  -->
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Discover Activities</h3>
+      <p>Add Activities to do for Today!</p>
+       <a href="#sec-2">
+          <div class="scroll-down"></div>
+        </a>
+    </div>
+
+    <div class="image">
+        <img src="{{ url_for('static', filename='ToDo.svg')}}" alt="" />
+    </div>
+    
+  </section>
+        <!-- <span style="font-size: 1.8rem">Selected Activities for Today</span>
+        <div id="progressHolder" class="progress" style="height: 25px">
+            <div id="medLevel" class="progress-bar  " role="progressbar"
+                 aria-valuenow="75"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 75%; font-size: 1.3rem">
+            </div>
+        </div>
+        <div class="text-end">
+            <p id="taskDone">0/5</p>
+        </div> 
+        <div id="completedNote" class="alert alert-success text-center" role="alert" style="font-size: 1.4rem"
+             hidden>
+            WOOHOOO! You Are All Peace-d Out!
+        </div>
+    </div>
+
+-->
+
+<!-- home section ends -->
+
+  <!-- aerobic training  -->
+  <section class="training" id="sec-2">
+    <!--
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <a href="/journal" class="btn btn_heading link-btn">
+                <span>Journal</span>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="/myActivities" class="btn btn_heading link-btn">
+                <span>Activities</span>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="/discover" class="btn btn_heading link-btn">
+                <span>Discover</span>
+            </a>
+        </div>
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    -->
+    <h1 class="heading">Activity Selection</h1>
+    <div class="box-container">
+      {% for a in joyarr %}
+      <form action="/act_desc" method="POST" >
+        <div class="box mb-5">
+              <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                  <div class="form-check">
+                     <!-- <input id="checkbox1" type="checkbox" name="checkbox"
+                            class="form-check-input medCheck" style="width: 2.5rem; height: 2.5rem">-->
+                      <label class="form-check-label" for="checkbox1"
+                            style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                          {{a.Name|safe}}
+                      </label>
+                      <input type="hidden" name="Name" value='{{a.Name|safe}}'>
+
+                  </div>
+              </div>
+              <ul class="mt-3" style="font-size: 1.5rem; padding-top: 1rem">
+                  <li>Period: {{a.Period|safe}}</li>
+                  <input type="hidden" name="Period" value='{{a.Period|safe}}'>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                  <li class="duration">Duration: {{a.Duration|safe}}</li>
+                  <input type="hidden" name="Duration" value='{{a.Duration|safe}}'>
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                <!-- <li  class="desc"style="list-style: none"><strong>Description: {{a.Description|safe}}</strong></li>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>--> 
+              </ul> 
+              <br>
+            <button id="clear" class="btn btn-primary mb-5 mt-0 btn-save" formaction="/act_desc">Read more</button>
+          </div>  
+        </form>
+      {% endfor %}
+      {% for a in angerarr %}
+      <form action="/act_desc" method="POST" >
+        <div class="box mb-5">
+              <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                  <div class="form-check">
+                     <!-- <input id="checkbox1" type="checkbox" name="checkbox"
+                            class="form-check-input medCheck" style="width: 2.5rem; height: 2.5rem">-->
+                      <label class="form-check-label" for="checkbox1"
+                            style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                          {{a.Name|safe}}
+                      </label>
+                      <input type="hidden" name="Name" value='{{a.Name|safe}}'>
+
+                  </div>
+              </div>
+              <ul class="mt-3" style="font-size: 1.5rem; padding-top: 1rem">
+                  <li>Period: {{a.Period|safe}}</li>
+                  <input type="hidden" name="image" value='{{a.image|safe}}'>
+                  
+                  <input type="hidden" name="Period" value='{{a.Period|safe}}'>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                  <li class="duration">Duration: {{a.Duration|safe}}</li>
+                  <input type="hidden" name="Duration" value='{{a.Duration|safe}}'>
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                <!-- <li  class="desc"style="list-style: none"><strong>Description: {{a.Description|safe}}</strong></li>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>--> 
+              </ul> 
+              <br>
+            <button id="clear" class="btn btn-primary mb-5 mt-0 btn-save" formaction="/act_desc">Read more</button>
+          </div>  
+        </form>
+      {% endfor %}
+      {% for a in sadarr %}
+      <form action="/act_desc" method="POST" >
+        <div class="box mb-5">
+              <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                  <div class="form-check">
+                     <!-- <input id="checkbox1" type="checkbox" name="checkbox"
+                            class="form-check-input medCheck" style="width: 2.5rem; height: 2.5rem">-->
+                      <label class="form-check-label" for="checkbox1"
+                            style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                          {{a.Name|safe}}
+                      </label>
+                      <input type="hidden" name="Name" value='{{a.Name|safe}}'>
+
+                  </div>
+              </div>
+              <ul class="mt-3" style="font-size: 1.5rem; padding-top: 1rem">
+                  <li>Period: {{a.Period|safe}}</li>
+                  <input type="hidden" name="Period" value='{{a.Period|safe}}'>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                  <li class="duration">Duration: {{a.Duration|safe}}</li>
+                  <input type="hidden" name="Duration" value='{{a.Duration|safe}}'>
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                <!-- <li  class="desc"style="list-style: none"><strong>Description: {{a.Description|safe}}</strong></li>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>--> 
+              </ul> 
+              <br>
+            <button id="clear" class="btn btn-primary mb-5 mt-0 btn-save" formaction="/act_desc">Read more</button>
+          </div>  
+        </form>
+      {% endfor %}
+      {% for a in feararr %}
+      <form formaction="/act_desc" method="POST" >
+        <div class="box mb-5">
+              <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                  <div class="form-check">
+                    <!-- <input id="checkbox1" type="checkbox" name="checkbox"
+                            class="form-check-input medCheck" style="width: 2.5rem; height: 2.5rem">--> 
+                      <label class="form-check-label" for="checkbox1"
+                            style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                          {{a.Name|safe}}
+                      </label>
+                      <input type="hidden" name="Name" value='{{a.Name|safe}}'>
+                      <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  </div>
+              </div>
+              <ul class="mt-3" style="font-size: 1.5rem">
+                  <li>Period: {{a.Period|safe}}</li>
+                  <input type="hidden" name="Period" value='{{a.Period|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                  <li class="duration">Duration: {{a.Duration|safe}}</li>
+                  <input type="hidden" name="Duration" value='{{a.Duration|safe}}'>
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>
+                <!-- <li  class="desc"style="list-style: none"><strong>Description: {{a.Description|safe}}</strong></li>
+                  <input type="hidden" name="Description" value='{{a.Description|safe}}'>
+
+                  <ul style="list-style: none; margin-bottom: 0.5rem">
+                      <li></li>
+                  </ul>--> 
+              </ul>         
+              <br>
+            <button id="clear" class="btn btn-primary mb-5 mt-0 btn-save" formaction="/act_desc">Read more</button>
+        </div>  
+      </form>
+      {% endfor %}
+        <!-- <div class="box mb-5">
+            <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                <div class="form-check">
+                    <input id="checkbox1" type="checkbox" name="checkbox1"
+                           class="form-check-input medCheck" style="width: 3rem; height: 3rem" value="Meditation"/>
+                    <label class="form-check-label" for="checkbox1"
+                           style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                        Art Therapy
+                    </label>
+                </div>
+            </div>
+            <ul class="mt-3" style="font-size: 1.5rem">
+                <li>Period: </li>
+                <ul style="list-style: none; margin-bottom: 0.5rem">
+                    <li></li>
+                </ul>
+                <li>Duration: </li>
+                <ul style="list-style: none; margin-bottom: 0.5rem">
+                    <li></li>
+                </ul>
+                <li  style="list-style: none"><strong>Description:</strong></li>
+                 <ul style="list-style: none; margin-bottom: 0.5rem">
+                    <li></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="box mb-5">
+            <div class="p-4 text-center" style="border: 1px solid darkgrey; border-radius: 0.5rem">
+                <div class="form-check">
+                    <input id="checkbox3" type="checkbox" name="checkbox2"
+                           class="form-check-input medCheck" style="width: 3rem; height: 3rem" value="GuideSleep"/>
+                    <label class="form-check-label" for="checkbox2"
+                           style="margin-left: 10px; font-size: 2rem; font-weight: 550">
+                        Guide to Sleep
+                    </label>
+                </div>
+            </div>
+            <ul class="mt-3" style="font-size: 1.5rem">
+                <li>Night</li>
+                <ul style="list-style: none; margin-bottom: 0.5rem">
+                    <li>10 Minutes</li>
+                </ul>
+                <li  style="list-style: none"><strong>Description:</strong></li>
+                <ul style="list-style: none; margin-bottom: 0.5rem">
+                    <li>BLAH BLAH BLAH</li>
+                </ul>
+            </ul>
+        </div>
+    </div> -->
+    <!-- <button id="clear" class="btn btn-primary mb-5 mt-0 btn-save" onclick="discoverItemSave()">Save Selection</button> -->
+    <br/>
+</section>
+<!-- aerobic training -->
+
+</body>
+
+<script>
+    function discoverItemSave() {
+        console.log("Updating Activity List...");
+        activity1 = document.getElementById('checkbox1').value; //name of activity
+        stat1 = document.getElementById('checkbox1').checked; //boolean (true/false)
+        activity2 = document.getElementById('checkbox2').value; //name of activity
+        stat2 = document.getElementById('checkbox2').checked; //boolean (true/false)
+        activity3 = document.getElementById('checkbox3').value; //name of activity
+        stat3 = document.getElementById('checkbox3').checked; //boolean (true/false)
+        itemJsonArray = [];
+        itemJsonArray.push([activity1, stat1]);
+        itemJsonArray.push([activity2, stat2]);
+        itemJsonArray.push([activity3, stat3]);
+        localStorage.setItem('discoverJson', JSON.stringify(itemJsonArray));
+        alert('Save Successful!');
+
+    }
+    function previousSelection(){
+        if (localStorage.getItem('discoverJson') == null) {
+            document.getElementById('checkbox1').checked = false;
+             document.getElementById('checkbox2').checked = false;
+              document.getElementById('checkbox3').checked = false;
+        } else {
+            itemJsonArrayStr = localStorage.getItem('discoverJson')
+            itemJsonArray = JSON.parse(itemJsonArrayStr);
+             itemJsonArray.forEach((element, index) => {
+                 let a = index + 1;
+                 console.log(a);
+                 document.getElementById('checkbox'+a).checked = element[1];
+             });
+        }
+    }
+
+    //What will happen
+    previousSelection();
+
+</script>
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+
+</html>

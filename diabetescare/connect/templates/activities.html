@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
+    <!-- <link rel="stylesheet" href="css/custom_css/home.css" /> -->
+    <script src="js/script.js"></script>
+    <title>Activities Page</title>
+  </head>
+  <body class="preload">
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="/home"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="/diet" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="/activities" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="/mental" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a>
+        <!-- <a href="/about" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="/profile" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a> -->
+        <a href="/" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+      </div>
+
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- home section starts  -->
+    <section class="home" id="sec-1">
+      <div class="content">
+        <h3>Time to put in the work!</h3>
+        <p>
+          We recommend that you perform a minimum of one strength-based and one
+          aerobic exercise per week.
+        </p>
+        <a href="/workout" class="btn btn_heading"
+          ><span>Log Workout</span
+          ><i class="material-icons">chevron_right</i></a
+        >
+        <a href="#sec-2">
+          <div class="scroll-down"></div>
+        </a>
+      </div>
+
+      <div class="image">
+        <img src="{{ url_for('static', filename='exercise.jpg')}}" alt="" />
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- aerobic training  -->
+
+
+    <section class="training" id="sec-2">
+     <h1 class="heading">Aerobic Training:</h1>
+  
+      {% for a in aerobic %}
+      <div class="box-container">
+        <div class="box">
+          <div class="checkbox">
+              <!-- <input type="checkbox" name="checkbox" /> -->
+              <h3>{{a.name|safe}}</h3>
+              <i class="material-icons">task_alt</i>
+          </div>
+          <p>Type: <strong>{{a.type|safe}}</strong> </p>
+          <p>Intensity: <strong>{{a.intensity|safe}}</strong></p>
+        </div>
+      {% endfor %}
+
+        <!-- <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+
+        <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+
+        <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- aerobic training -->
+
+    <!-- strength training  -->
+    <section class="training" id="sec-3">
+      <h1 class="heading">Strength Training:</h1>
+      {% for a in strength %}
+      <div class="box-container">
+        <div class="box">
+          <div class="checkbox">
+              <!-- <input type="checkbox" name="checkbox" /> -->
+              <h3>{{a.name|safe}}</h3>
+              <i class="material-icons">task_alt</i>
+          </div>
+          <p>Type: <strong>{{a.type|safe}}</strong> </p>
+          <p>Intensity: <strong>{{a.intensity|safe}}</strong></p>
+        </div>
+      {% endfor %}
+
+        <!-- <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+
+        <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+
+        <div class="box">
+          <div class="checkbox">
+            <label class="form-control">
+              <input type="checkbox" name="checkbox" />
+              <h3>Title</h3>
+            </label>
+          </div>
+          <p>Type</p>
+          <p>Duration</p>
+          <p>Intensity</p>
+          <p>Estimated Calories</p>
+        </div>
+      </div> -->
+    </section>
+
+  <!-- sidebar -->
+   <script>
+      window.addEventListener("load", () => {
+        document.body.classList.remove("preload");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.querySelector(".nav");
+
+        document.querySelector("#btnNav").addEventListener("click", () => {
+          nav.classList.add("nav--open");
+        });
+
+        document.querySelector(".nav_overlay").addEventListener("click", () => {
+          nav.classList.remove("nav--open");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+
+  <body>
+    <!-- header section  -->
+    <header class="header">
+      <a href="/home" class="logo">DiabetesCare</a>
+
+       <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/report">Report</a>
+        <a href="/health">Health</a>
+        <a href="/about">About</a>
+        <a href="/profile">Account</a>
+      </nav>
+
+      <!-- menu section  -->
+      <div id="menu-btn" class="uil uil-bars">
+        <img src="{{ url_for('static', filename='menu.png')}}" alt="" />
+      </div>
+    </header>
+
+    <!-- home section  -->
+    <section class="homes" id="homes">
+      <div class="content" >
+        <br><br><br><br>
+        <p style="text-align: center">ABOUT DIABETESCARE</p> 
+        <h3 style="text-align: center">Let's make your life happier and healthier</h3>
+      </div>
+    </section>
+
+    <!-- welcome section  -->
+    <section class="homes" id="homes">
+      <div class="content">
+        <h3>Welcome to DiabetesCare!</h3>
+        <p>
+          We seek to instill hope and enhance the health and well-being of
+          diabetic and prediabetic patients so that they could truly live their
+          lives to the fullest.
+        </p>
+      </div>
+      <div class="image">
+        <img src="{{ url_for('static', filename='diabetes.jpeg')}}" alt="" />
+      </div>
+    </section>
+
+    <!-- what we offer section  -->
+    <section class="homes" id="homes">
+      <div class="image">
+        <img src="img/aboutpage.jpeg" alt="" />
+      </div>
+
+      <div class="content">
+        <h3>What we offer?</h3>
+        <p>
+          We aim to assist individuals improve their lifestyle by offering
+          personalized food and exercise plans, as well as stress management
+          techniques.
+        </p>
+        <p>
+          In addition to that, we offer a blood pressure and glucose analysis
+          section where users can view how their health has changed over time.
+          And lastly, we provide a medication reminder option, so that along
+          with improving their lifestyle, the users can also keep up with their
+          prescribed medications.
+        </p>
+      </div>
+    </section>
+
+    <!-- how section  -->
+    <section class="homes" id="homes">
+      <div class="content">
+        <h3>How do we accomplish?</h3>
+        <p>
+          In order to provide the users with personalized lifestyle
+          recommendations, we capture the user’s data from their twitter
+          accounts. We do this using two main technologies of machine learning:
+        </p>
+        <p>
+          - Natural Learning Processing (NLP) <br />
+          - Deep Learning (DL)
+        </p>
+      </div>
+
+      <div class="image">
+        <img src="img/phone.jpg" alt="" />
+      </div>
+    </section>
+
+    <!-- reference section-->
+    <section class="services" id="services" style="padding-top: 100px;
+    padding-bottom: 100px;" >
+      <h1 class="heading">Credits</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="material-icons">image</i>
+          <h3>Images</h3>
+          <p>
+            Our website uses images from Pexels, a platform where photographers
+            share their creative work. Users may access more than 3 million
+            high-quality, cost-free pictures and videos with unlimited access
+            that are both royalty-free and copyright-free.
+            <br />
+            <br />
+            https://www.pexels.com/
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="material-icons">font_download</i>
+          <h3>Font & Icons</h3>
+          <p>
+            Every font and icon used on our website is from google catalog, a
+            platform that is free and open source. Therefore, everyone may
+            access it and can be used for any project.
+            <br />
+            <br />
+            <br />
+            <br />
+            https://fonts.google.com/
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="material-icons">menu_book</i>
+          <h3>Books</h3>
+          <p>
+            Software-Architecture-Patterns by Mark Richards.<br />
+            The Basics of UX design by Interaction Design Foundation.<br />
+            Neural Networks and Deep Learning by Pat Nakamoto.<br />
+            Make Your Own Neural Network by Tariq Rashid. <br />
+            Deep Learning by John D. Kelleher. <br />
+            Natural-Language-Processing in Action by Hobson Lane et al. <br />
+            Mining the Social Web by Matthew Russel & Mikhail Klassen. <br />
+            21 Recipes for Mining Twitter by Matthew Russel. <br /> 
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="material-icons">library_books</i>
+          <h3>Journal Articles</h3>
+          <p>
+            Review of Architectural Patterns by Firdaus Harun et al.<br />
+            Detecting Diabetes Risk from Social Media Activity by Dane Bel et al. <br />
+            An introduction to Twitter Data Analysis in Python by Vivek Wisdom. <br />
+            Analyzing the Language of Food on Social Media by Daniel Fried et al. <br> 
+            An Evidence-Based Study of Diabetes Prevention and Management with NLP and Deep Learning Ali Zalzala et al.<br>
+            Towards Well-Being Management with Automated Qualitative Data Analysis Saleem et al. <br> 
+            Assisting you to advance with ethics in research by Zeenath Khan et al. <br>
+            Development and Validation of a Patient Self-assessment Score by heejung Bang et al. <br>
+        </p>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

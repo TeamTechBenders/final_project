@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medication Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='analysis.css')}}">
+</head>
+    <style>
+
+
+      .meow {
+  background-color:#d3e9f8;
+  width: 300px;
+  border: 15px;
+   border-radius: 30px;
+  padding: 50px;
+  margin: 20px;
+}
+
+h2{
+  font-size: 25px;
+}
+      </style>
+
+  <body>
+    <!-- header section  -->
+    <header class="header">
+      <a href="/home" class="logo">DiabetesCare</a>
+
+      <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/health">Health</a>
+        <a href="/reminder">Reminder</a>
+        <a href="/self_assessment">Self-Assessment</a>
+        <a href="/profile">Account</a>
+      </nav>
+
+      <div id="menu-btn" class="uil uil-bars"></div>
+    </header>
+    <!-- home -->
+    <h2>Medication Reminder</h2>
+
+
+  <section class="container forms">
+      <div class="form login">
+          <div class="form-content">
+            <form name="medicine_reminder" action="/action_page.php" onsubmit="return validateForm()" method="get">
+<h2>Medication Reminder</h2>
+<br>
+      <div>
+      <label for="medication">Enter your medication below</label>
+      <br>
+      <input type="text" id="medication" name="medication_name" value="" placeholder="Enter your medication..." required><span id="mError"></span>
+      </div>
+      <br>
+      <div>
+        <label for="quantity">Amount of Servings a day: </label>  <input type="number" id="quantity" name="quantity" min="1" max="5">
+  </div>
+
+<br>
+<div class="form-group">
+
+  <label for="frequency">How many times each day do you need to take this medication?</label>
+  <br>
+  <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+<label for="breakfast">After breakfast</label><br>
+<input type="checkbox" id="lunch" name="lunch" value="lunch">
+<label for="lunch">After lunch</label><br>
+<input type="checkbox" id="dinner" name="dinner" value="dinner">
+<label for="dinner">After dinner</label><br>
+<input type="checkbox" id="bsleep" name="bsleep" value="bsleep">
+<label for="bsleep">Before sleep</label><br>
+<br>
+  </div>
+<br>
+
+<div class="form-group">
+   <label for="time">Notification time</label>
+   <input type="time" class="form-control" id="time" data-ng-model="formData.remTime" required>
+</div>
+<br>
+<div class="field button-field">
+      <button class="submit-link" formaction="/home">Add medication</button>
+      </div>
+      </div>
+    </div>
+      </form>
+</body>
+</html>

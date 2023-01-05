@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+          
+    <link rel="stylesheet" href="{{ url_for('static', filename='scnd_bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='third_bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <!-- <link rel="stylesheet" href="css/custom_css/home.css"/> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}"> 
+    <!-- <link rel="stylesheet" href="css/custom_css/satisfactionPage.css"/> --> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='satisfactionPage.css')}}">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+    <!-- <script type="text/javascript" src="js/journalLogic.js"></script> -->
+    <script src="{{url_for('static', filename='journalLogic.js')}}"></script>
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+    <title>Mental Health</title>
+</head>
+<body class="preload">
+<header class="header">
+    <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+    </button>
+    <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+    </div>
+</header>
+
+<nav class="nav">
+    <div class="nav_links">
+        <div class="logo-details">
+            <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+            <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+            <i class="material-icons">grid_view</i>
+            Home
+        </a>
+        <a href="/diet" class="nav_link">
+            <i class="material-icons">restaurant</i>
+            Diet
+        </a>
+        <a href="/activity" class="nav_link">
+            <i class="material-icons">fitness_center</i>
+            Activities
+        </a>
+        <a href="/journal" class="nav_link">
+            <i class="material-icons">spa</i>
+            Mental Health
+        </a>
+        <!-- <a href="about.html" class="nav_link">
+            <i class="material-icons">info</i>
+            About
+        </a>
+        <a href="profile.html" class="nav_link">
+            <i class="material-icons">person</i>
+            Profile
+        </a> -->
+        <a href="#" class="nav_link">
+            <i class="material-icons">logout</i>Logout
+        </a>
+    </div>
+
+    <div class="nav_overlay"></div>
+</nav>
+<section class="home" id="home">
+    <div class="content">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <a href="/journal" class="btn btn_heading">
+                    <span>Journal</span>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="/myActivities" class="btn btn_heading">
+                    <span>Activities</span>
+                </a>
+            </div>
+            <div class="col-3">
+                <a href="/discover" class="btn btn_heading">
+                    <span>Discover</span>
+                </a>
+            </div>
+        </div>
+        <br/>
+
+        <br/>
+        <div class="container my-4" style="margin-bottom: 20px">
+            <h2 class="text-center">Journal</h2>
+            <br/>
+            <form method="POST" action="{{ url_for('add_entry') }}>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="todayDate" disabled hidden>
+                </div>
+                <h3 style="font-size: 2rem">How are you feeling today?</h3>
+                <div class="mb-3">
+                    <label for="description"></label>
+                    <input class="form-control" name='journalentry' id="description" rows="3">
+                </div>
+                <button id="add" class="btn btn-primary" formaction="/add_entry">Add Entry</button>
+            </form>
+            <form method="POST" action="{{ url_for('del_entry') }}>
+              <input type="hidden" name="Name">                   
+              <button id="add" class="btn btn-primary" formaction="/del_entry">Delete All Entries</button>
+            </form>
+                <!-- <button id="clear" class="btn btn-primary" onclick="clearStorage()">Delete All Entries</button> -->
+                <br/>
+                <br/>
+                <div id="items" class="my-4">
+                    <h2>Today's Entries</h2>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Entry</th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody id="tableBody">
+                        {% for e in journal %}
+                        <tr>
+                          <td>20/11/2022</td>
+                          <td>{{e|safe}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <a href="mentalHealthJournal.html" class="btn btn_heading">
+                    <span>Journal History</span>
+                </a> -->
+            
+        </div>
+
+        <br/>
+
+
+    </div>
+<!--
+    <div class="image">
+        <img src="{{ url_for('static', filename='Typing.svg')}}" alt="" />
+    </div>
+    -->
+</section>
+
+<!-- home section ends -->
+<div>
+
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<!-- <script>
+
+
+    function getAndUpdate() {
+        console.log("Updating List...");
+
+        todayDate = document.getElementById('todayDate').value;
+        desc = document.getElementById('description').value;
+        if (localStorage.getItem('itemsJson') == null) {
+            itemJsonArray = [];
+            itemJsonArray.push([todayDate, desc]);
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        } else {
+            itemJsonArrayStr = localStorage.getItem('itemsJson')
+            itemJsonArray = JSON.parse(itemJsonArrayStr);
+            itemJsonArray.push([todayDate, desc]);
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        }
+        displayTodayEntries();
+
+    }
+
+    function update() {
+        if (localStorage.getItem('itemsJson') == null) {
+            itemJsonArray = [];
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        } else {
+            itemJsonArrayStr = localStorage.getItem('itemsJson')
+            itemJsonArray = JSON.parse(itemJsonArrayStr);
+        }
+        // Populate the table
+        let tableBody = document.getElementById("tableBody");
+        let str = "";
+        itemJsonArray.forEach((element, index) => {
+            str += `
+                    <tr>
+
+                    <td>${element[0]}</td>
+                    <td>${element[1]}</td>
+
+                    <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td>
+                    </tr>`;
+        });
+        tableBody.innerHTML = str;
+    }
+
+    function displayTodayEntries() {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months start at 0!
+        let dd = today.getDate();
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+
+        const formattedToday = dd + '/' + mm + '/' + yyyy;
+
+        todayDate = document.getElementById('todayDate').value;
+        console.log(formattedToday);
+        if (localStorage.getItem('itemsJson') == null) {
+            itemJsonArray = [];
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        } else {
+            itemJsonArrayStr = localStorage.getItem('itemsJson')
+            itemJsonArray = JSON.parse(itemJsonArrayStr);
+        }
+        // Populate the table
+        let tableBody = document.getElementById("tableBody");
+        let str = "";
+        itemJsonArray.forEach((element, index) => {
+            if (element[0] === formattedToday) {
+                str += `
+                    <tr>
+                    <td>${element[0]}</td>
+                    <td>${element[1]}</td>
+                    <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td>
+                    </tr>`;
+            }
+        });
+        tableBody.innerHTML = str;
+    }
+
+
+    function deleted(itemIndex) {
+        console.log("Delete", itemIndex);
+        itemJsonArrayStr = localStorage.getItem('itemsJson')
+        itemJsonArray = JSON.parse(itemJsonArrayStr);
+        // Delete itemIndex element from the array
+        itemJsonArray.splice(itemIndex, 1);
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+        update();
+
+    }
+
+    function clearStorage() {
+        if (confirm("Do you really want to clear?")) {
+            console.log('Clearing the storage')
+            localStorage.clear();
+            update()
+        }
+    }
+
+    add = document.getElementById("add");
+    add.addEventListener("click", getAndUpdate);
+    displayTodayEntries();
+
+</script> -->
+<script type="text/javascript" src="js/script.js"></script>
+</html>

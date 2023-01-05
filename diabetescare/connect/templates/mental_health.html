@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>complete responsive hospital website design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
+  </head>
+
+  <body>
+    <!-- header section  -->
+
+    <header class="header">
+      <a href="/home" class="logo">DiabetesCare</a>
+
+      <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/health">Health</a>
+        <a href="/reminder">Reminder</a>
+        <a href="/self_assessment">Self-Assessment</a>
+        <a href="/profile">Account</a>
+      </nav>
+
+      <div id="menu-btn" class="uil uil-bars"></div>
+    </header>
+
+    <!-- home  -->
+     <section class="home-diet" id="home">
+      <div class="content">
+        <h3>make an investment in your mental health</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+          accusamus tempore temporibus rem amet laudantium animi optio
+          voluptatum. Natus obcaecati unde porro nostrum ipsam itaque impedit
+          incidunt rem quisquam eos!
+        </p>
+      </div>
+
+      <div class="image">
+        <img src="{{ url_for('static', filename='mentalhealth_img1.jpeg')}}" alt="" />
+      </div>
+    </section>
+
+     <!-- activity  -->
+    <section class="popular" id="popular">
+      <h1 class="heading">boost your mental health </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="{{ url_for('static', filename='meditate_img1.jpg')}}" alt="" />
+          <h3>meditation</h3>
+          <a href="#" class="btn">read more</a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='books_img1.jpeg')}}" alt="" />
+          <h3>read a book </h3>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+    <!-- javascript -->
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

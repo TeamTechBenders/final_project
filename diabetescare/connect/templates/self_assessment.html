@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assessment.css')}}">
+    <title>Self-Assessment Form</title>
+    <script src="{{url_for('static', filename='script.js')}}" defer></script>
+
+  </head>
+
+  <body>
+    <form action="/self_assessment_save" method="POST"class="form">
+      <h1 class="text-center">Self-Assessment Form</h1>
+      <!-- Progress bar -->
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+
+        <div
+          class="progress-step progress-step-active"
+
+        ></div>
+        <div class="progress-step" ></div>
+        <!-- <div class="progress-step" ></div> -->
+
+      </div>
+
+      <!-- Steps -->
+      <div class="form-step form-step-active">
+        <div class="input-group">
+          <label for="age">1. How old are you?</label>
+          <input type="number" name="age" id="health" min="5" max="65" placeholder="Enter your age" required/>
+        </div>
+         <div class="input-group">
+          <label for="height">2. What is your height?</label>
+          <input
+            type="number"
+            name="height"
+            id="health"
+            min="0"
+            step="0.1"
+            placeholder="Enter your height in centimeters (cm)"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="position">3. What is your weight?</label>
+          <input type="text" name="weight" id="health" placeholder="Enter your weight in kgs" required />
+        </div>
+       
+        <div class="">
+          <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <div class="input-group">
+          <label for="position">4. Do you have a family history of diabetes?</label>
+          <select id="input-qs" name="input-qs" required>
+            <option value="">Select your answer</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="ID">5. How would you rank yourself when it comes to physical activity </label>
+          <select id="input-qs" name="level" required>
+            <option value="">Select your answer</option>
+            <option value="Low">Beginner</option>
+            <option value="Medium">Intermediate</option>
+            <option value="High">Expert</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="ID">6. Do you have access to a gym or equipment (Dumbbells, Kettle Bells) </label>
+          <select id="input-qs" name="equipment" required>
+            <option value="">Select your answer</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <button class="signup-link"   
+          class="btn btn-prev"
+          formaction="/self_assessment_save">
+          Submit
+        </button>
+        </div>
+      </div>
+    </form>
+  </body>
+
+</html>

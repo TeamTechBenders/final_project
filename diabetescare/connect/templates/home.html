@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
+    <script type="text/javascript">
+    var mental = '{{ result|tojson }}';
+    var phys = '{{ neg_resultF|tojson }}';
+    var nutr = '{{resultN|tojson}}';
+    </script>
+
+    <title>Home Page</title>
+  </head>
+  <body class="preload">
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="#sec-1">Home</a>
+          <a href="#sec-2">Health</a>
+          <a href="#progress">Progress</a>
+          <!--  <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/physical_activity">Activities</a>
+          <a href="/sleep">Mental Health</a>-->
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="#sec-1" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="#sec-2" class="nav_link">
+          <i class="material-icons">favorite</i>
+          Health
+        </a>
+        <a href="#progress" class="nav_link">
+          <i class="material-icons">published_with_changes</i>
+          Progress
+        </a>
+        <!--
+        <a href="home.html" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="diet.html" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="activities.html" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="mentalHealthPage2.html" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a> 
+        <a href="about.html" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="profile.html" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a>-->
+        <a href="#" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+      </div>
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- chart starts  -->
+    <section class="chart" id="sec-1">
+      <h1 class="banner">Your Chart Results</h1>
+      <p>
+        Bad = 1% - 34% <br />
+        Okay = 35% - 70% <br />
+        Great = 71% - 100%
+      </p>
+      <div class="all"></div>
+    </section>
+
+    <!-- chart ends -->
+
+    <!-- home section starts  -->
+
+    <section class="bp_glucose" id="sec-2">
+      <div class="content">
+        <h1>Check your results</h1>
+        <p>Feel Good About Yourself Today. Start treating your heart right!</p>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <a href="/bp">
+            <i class="material-icons">water_drop</i>
+            <h3>Blood Pressure</h3></a>
+          <br />
+          <p>Date: <strong>{{date|safe}}</strong></p>
+          <p>Systolic: <strong>{{sys|safe}}</strong></p>
+          <p>Diastolic: <strong>{{dia|safe}}</strong></p>
+          <p>Time: <strong>{{bptime|safe}}</strong></p>
+        </div>
+
+        <div class="box">
+          <a href="/glucose">
+            <i class="material-icons">health_and_safety</i>
+            <h3>Glucose Level</h3></a>
+          <br />
+          <p>Date: <strong>{{date|safe}}</strong></p>
+          <p>Glucose Level: <strong>{{glucose|safe}}</strong></p>
+          <p>Time: <strong>{{gtime|safe}}</strong></p>
+        </div>
+
+        <div class="box">
+          <a href="/weight">
+            <i class="material-icons">monitor_weight</i>
+            <h3>Check-in</h3>
+            </a>
+          <br />
+          <p>Weight: <strong>{{weight|safe}}</strong></p>
+          <p>Date: <strong>{{w_date|safe}}</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- progress section starts  -->
+
+    <section class="progress" id="progress">
+      <div class="content">
+        <h1 class="banner">Your Progress</h1>
+        <p>
+          We provide services that will assist users experience healthier lives.
+          These features will include personalized meal and exercise plans as
+          well as stress management techniques. On our mental health website, we
+          also include a journaling feature that enables users to write openly
+          about their day.
+        </p>
+        <p style="font-style: italic; color: red">
+          Please click on each of the following three buttons for more details
+        </p>
+      </div>
+
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+
+      <div class="box-container">
+        <div class="box">
+          <a href="/journal"> 
+            <h3>Mental Health</h3>
+            <p>Peace Level: {{peace|safe}}/3</p>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="/activity"> 
+            <h3>Physical Activity</h3>
+            <p>
+              Aerobic: {{aer_count|safe}}<br />
+              Strength: {{str_count|safe}}
+            </p>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="/diet">
+            <h3>Nutrition</h3>
+            <p>Calories: {{calories|safe}}<br /></p>
+         </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- progress section ends -->
+  </body>
+  <script src="{{url_for('static', filename='script_home.js')}}"></script>
+  
+</html>

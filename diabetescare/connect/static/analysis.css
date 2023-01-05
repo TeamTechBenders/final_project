@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.container {
+  align-items: center;
+  column-gap: 30px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  border-radius: 6px;
+  background: #aed6f1;
+  position: absolute;
+  max-width: 430px;
+  width: 100%;
+  padding: 30px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #232836;
+  text-align: left;
+}
+label {
+  font-size: 16px;
+  color: #232836;
+  text-align: left;
+}
+form {
+  margin-top: 15px;
+}
+
+.form .field {
+  border-radius: 6px;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.field input,
+.field button {
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+.field input {
+  outline: none;
+  padding: 0 15px;
+  border: 1px solid#CACACA;
+}
+.field input:focus {
+  border-bottom-width: 2px;
+}
+
+.field button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4070f4;
+  transition: all 0.5s ease;
+}
+.field button:hover {
+  background-color: #265df2;
+}
+
+/*nav for bp &glucose*/
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+section:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.header {
+  padding: 2rem 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.header .logo {
+  font-size: 36px;
+  color: #444;
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  color: #777;
+  margin-left: 2rem;
+}
+
+.header .navbar a:hover {
+  color: #3498db;
+}
+
+#menu-btn {
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  background: #eee;
+  color: #3498db;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* media  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    border-radius: 0.5rem;
+    width: 30rem;
+    background: #fff;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: none;
+  }
+
+  .header .navbar.active {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.2s ease-out;
+  }
+
+  .header .navbar a {
+    font-size: 2rem;
+    display: block;
+    margin: 2.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

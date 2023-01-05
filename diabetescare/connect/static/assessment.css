@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #265df2, #127ddd);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/*input box*/
+.form-step .input-group #input-qs {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+select {
+  color: #707070;
+}
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6px; 
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #265df2;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.progress-step-active {
+  background-color: #265df2;
+  color: #f3f3f3;
+}
+
+/* Form */
+.form {
+  width: clamp(520px, 30%, 530px);
+  margin: 0 auto;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  background: #fff;
+  z-index: 1;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+.input-group {
+  padding: 5px;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: #265df2;
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #265df2;
+}
+.btns-group .signup-link {
+  margin-top: 20px;
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: #265df2;
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  border-color: #265df2;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.btns-group .signup-link:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #265df2;
+}
+
+@media (max-width: 850px) {
+  .form {
+    max-width: 650px;
+    padding: 30px;
+    padding-left: 50px;
+  }
+  .progressbar::before,
+  .progress {
+    height: 4px;
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .form-step .input-group #input-qs {
+    padding: 0.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .form {
+    max-width: 450px;
+    padding: 30px;
+  }
+  .form h1 {
+    font-size: 26px;
+  }
+  .progress-step {
+    width: 2rem;
+    height: 2rem;
+  }
+  .progress-step::before {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .form {
+    max-width: 350px;
+    padding: 30px;
+  }
+  .form h1 {
+    font-size: 22px;
+  }
+  .progress-step {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .progress-step::after {
+    font-size: 0.7rem;
+  }
+  .form .input-group label {
+    font-size: 14px;
+  }
+  input {
+    width: 100%;
+    padding: 0.3rem;
+  }
+  .form-step .input-group #input-qs {
+    padding: 0.3rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    font-size: 10px;
+  }
+}

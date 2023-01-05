@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='homes.css')}}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='satisfactionPage.css')}}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='linkButtons.css')}}"> 
+
+
+    <title>Mental Health</title>
+  </head>
+  <body class="preload">
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="img/logo_menu.png" alt="logo" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="/diet" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="/activity" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="/journal" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a>
+        <!-- <a href="about.html" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="profile.html" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a> -->
+        <a href="#" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+      </div>
+
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- home section starts  -->
+    <form action="/addtodisplay" method="POST">
+    <section class="home_description" id="home_description">
+      <div class="content">
+        <h3>{{name|safe}}</h3>
+
+        <input type="hidden" name="Name" value='{{name|safe}}'>
+
+      </div>
+      <div class="image">
+            <img src="{{ url_for('static', filename=image)}}" alt="" />
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- diet   -->
+    <div class="row">
+      <div class="column side">
+        <h2>Period</h2>
+        <p>{{period|safe}}</p>
+        <input type="hidden" name="Period" value='{{period|safe}}'>
+
+      </div>
+
+      <div class="column middle">
+        <h2>Description</h2>
+        {% for a in description %}
+        <p>
+          {{a|safe}}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="column side">
+        <h2>Duration</h2>
+        <p>{{duration|safe}}</p>
+        <input type="hidden" name="Duration" value='{{duration|safe}}'>
+
+      </div>
+    </div>
+
+    <div class="btn-text-center">
+      <button class="btn btn-primary" action="/addtodisplay">Finish Activity</button>
+    </div>
+    </form>
+    <br />
+    <br />
+  </body>
+  <script type="text/javascript" src="js/script.js"></script>
+</html>

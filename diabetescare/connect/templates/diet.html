@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='diet.css')}}">
+
+    <!-- <link rel="stylesheet" href="css/custom_css/diet.css" /> -->
+    <title>Diet Page</title>
+  </head>
+  <body class="preload">
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="/diet" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="/activity" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="/journal" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a>
+        <!-- <a href="about.html" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="profile.html" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a> -->
+        <a href="#" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+      </div>
+
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- home section starts  -->
+    <section class="home" id="sec-1">
+      <div class="content">
+        <h3>Food made with love!</h3>
+        <p>For your body to rejuvenate, have a nutritious meal.</p>
+        <a href="#sec-2">
+          <div class="scroll-down"></div>
+        </a>
+      </div>
+
+      <div class="image">
+        <img src="{{ url_for('static', filename='food.jpg')}}" alt="" />
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- blogs -->
+
+    <h1 class="heading" id="sec-2">Total calories remaining: {{calories|safe}}</h1>
+
+    <section class="blogs_main" id="blogs">
+      <h3 class="subheading">
+        Breakfast
+        <a href="/breakfast_meals" class="btn"
+          >Log Meal
+          <span class="material-icons">add_circle</span>
+        </a>
+      </h3>
+
+      <div class="box-container">
+      {% for a in breakfast_arr %}
+        <div class="box">
+          <div class="image">
+            <img src="{{ url_for('static', filename=a.image)}}" alt="" />
+          </div>
+
+          <div class="content">
+            <h3>{{a.name|safe}}</h3>
+            <p>
+              Calories: {{a.total_Calories|safe}} <br />
+              Protein: {{a.protein|safe}} <br />
+              Carbs: {{a.carbs|safe}}<br />
+              Fat: {{a.fat|safe}}<br />
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section class="blogs_main" id="blogs">
+      <h3 class="subheading">
+        Lunch
+        <a href="/lunch_meals" class="btn"
+          >Log Meal
+          <span class="material-icons">add_circle</span>
+        </a>
+      </h3>
+
+      <div class="box-container">
+        {% for a in lunch_arr %}
+        <div class="box">
+          <div class="image">
+            <img src="{{ url_for('static', filename=a.image)}}" alt="" />
+          </div>
+
+          <div class="content">
+            <h3>{{a.name|safe}}</h3>
+            <p>
+              Calories: {{a.total_Calories|safe}} <br />
+              Protein: {{a.protein|safe}} <br />
+              Carbs: {{a.carbs|safe}}<br />
+              Fat: {{a.fat|safe}}<br />
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+
+    <section class="blogs_main" id="blogs">
+      <h3 class="subheading">
+        Dinner
+        <a href="/dinner_meals" class="btn"
+          >Log Meal
+          <span class="material-icons">add_circle</span>
+        </a>
+      </h3>
+
+      <div class="box-container">
+
+        {% for a in dinner_arr %}
+        <div class="box">
+          <div class="image">
+            <img src="{{ url_for('static', filename=a.image)}}" alt="" />
+          </div>
+
+          <div class="content">
+            <h3>{{a.name|safe}}</h3>
+            <p>
+              Calories: {{a.total_Calories|safe}} <br />
+              Protein: {{a.protein|safe}} <br />
+              Carbs: {{a.carbs|safe}}<br />
+              Fat: {{a.fat|safe}}<br />
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  </body>
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+</html>

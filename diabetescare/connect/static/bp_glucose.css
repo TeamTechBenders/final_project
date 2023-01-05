@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+/*header nav*/
+.header_navs .navbar a {
+  font-size: 1.7rem;
+  color: #777;
+  margin-left: 2rem;
+}
+
+.header_navs .navbar a:hover {
+  color: #265df2;
+}
+
+/*side nav*/
+.header {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.header a {
+  font-size: 24px;
+  font-weight: 600;
+  padding-left: 10px;
+  color: #444;
+  text-align: left;
+}
+
+@media screen and (max-width: 850px) {
+  .header_navs {
+    display: none;
+  }
+  .nav a {
+    font-size: 19px;
+  }
+  .nav .nav_links .logo-details {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header_navs {
+    display: none;
+  }
+  .nav a {
+    font-size: 14px;
+  }
+  .nav .nav_links .logo-details {
+    font-size: 20px;
+  }
+}
+
+/*menu btn*/
+.header_button {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+}
+
+.header_button i {
+  font-size: 28px;
+}
+
+.nav_links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 300px;
+  background: #265df2;
+  transform: translateX(-300px);
+  transition: transform 0.3s;
+}
+
+.nav_links .logo-details {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.nav_links .logo-details {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 0 20px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nav--open .nav_links {
+  transform: translateX(0);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav_link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 18px 20px;
+  background: transform 0.2s;
+}
+
+.nav_link i {
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+.nav_link--active,
+.nav_link:hover {
+  background: #4070f4;
+}
+
+.nav_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.nav--open .nav_overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* body */
+.container {
+  align-items: center;
+  column-gap: 30px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  background: #265df2;
+}
+.form {
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 50px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #232836;
+  text-align: left;
+}
+label {
+  font-size: 16px;
+  color: #232836;
+  text-align: left;
+}
+.form .field {
+  border-radius: 6px;
+  position: relative;
+  height: 45px;
+  width: 100%;
+  margin-top: 40px;
+  
+}
+.field input,
+.field button {
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+.field input {
+  outline: none;
+  padding: 0 15px;
+  border: 1px solid#CACACA;
+  margin-top: 10px;
+
+}
+.field input:focus {
+  border-bottom-width: 2px;
+}
+
+.field button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #265df2;
+  transition: all 0.5s ease;
+  margin-top: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.field button:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #265df2;
+}
+

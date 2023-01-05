@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <section class="container forms">
+<div class="form signup">
+  <div class="form-content">
+    <header>Create your account</header>
+    <span class="title"
+      >Please fill all the details to create an account.</span
+    >
+    <form action="/save_info" method="POST">
+      <!-- Full name -->
+      <div class="field input-field">
+        <input name="fullname" type="text" placeholder="Full name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="field input-field">
+        <input name="email" type="email" placeholder="Email" class="input" />
+      </div>
+
+      <!-- Username -->
+      <div class="field input-field">
+        <input name="username" type="text" placeholder="Twitter Username" required />
+      </div>
+
+      <!-- Password -->
+      <div class="field input-field">
+        <input name="password"
+          type="password"
+          placeholder="Create password"
+          class="password"
+        />
+      </div>
+
+      <!-- Confirm password -->
+      <div class="field input-field">
+        <input 
+          type="password"
+          placeholder="Confirm password"
+          class="password"
+        />
+        <i class="uil uil-eye-slash showHidePw"></i>
+      </div>
+
+      <!-- Gender --> 
+      <div class="field input-field">
+        <input name="gender" type="text" placeholder="Gender" required />
+      </div>
+
+      <!-- Nationality -->
+      <div class="field input-field">
+        <input name="nationality" type="text" placeholder="Nationality" required />
+      </div>
+
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';">&times;</span>
+        {{msg|safe}}
+      </div>
+
+
+      <!-- Sign up btn -->
+      <div class="field button-field">
+        <button class="signup-link" formaction="/save_info">
+          Continue
+        </button>
+      </div>
+    </form>
+
+    <div class="form-link">
+      <span
+        >Already have an account?
+        <a href="#" class="txt login-link">Login</a></span
+      >
+    </div>
+  </div>
+</div>
+</section>
+</html>

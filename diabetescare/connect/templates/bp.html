@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Pressure</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bp&glucose.css')}}">
+
+  </head>
+  <body class="preload">
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <!-- <a href="/diet">Diet</a>
+          <a href="/activities">Activities</a>
+          <a href="/mentalHealthPage2">Mental Health</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="img/logo_menu.png" alt="logo" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <!-- <a href="/diet" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="/activities" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="/mentalHealthPage2" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a> -->
+        <!-- <a href="about.html" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="profile.html" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a> -->
+        <a href="#" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+        <br /><br /><br /><br />
+      </div>
+
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- body section -->
+    <section class="container forms">
+      <div class="form login">
+        <div class="form-content">
+          <h1>Blood Pressure</h1>
+          <form action="/bp_save" method="POST">
+            <div class="field input-field">
+              <label for="bp">Systolic (mmHg)</label>
+              <input
+                type="text"
+                id="medication"
+                name="systolic"
+                value=""
+                placeholder="Enter your Systolic"
+                required
+              />
+            </div>
+            <div class="field input-field">
+              <label for="bp">Diastolic (MmHg)</label>
+              <input
+                type="text"
+                id="medication"
+                name="diastolic"
+                value=""
+                placeholder="Enter your Diastolic"
+                required
+              />
+            </div>
+            <!-- <div class="field input-field">
+              <label for="bp">Resting HR (Bpm)</label>
+              <input
+                type="text"
+                id="medication"
+                name="resting"
+                value=""
+                placeholder="Enter your Pulse"
+                required
+              />
+            </div> -->
+            <div class="field input-field">
+              <label for="time">Time</label>
+              <input
+                name="time"
+                type="time"
+                class="form-control"
+                id="time"
+                data-ng-model="formData.remTime"
+                required
+              />
+            </div>
+            <!-- <div class="field input-field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+            </div> -->
+         
+
+            <div class="field button-field">
+              <button class="add bp" action="/bp_save"">ADD</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>

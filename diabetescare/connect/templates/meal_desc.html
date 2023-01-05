@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>complete responsive hospital website design</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='diet.css')}}">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      .column {
+        float: left;
+        padding: 10px;
+        margin-left: 20px;
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: justify;
+        color: #444;
+      }
+
+      /* Left and right column */
+      .column.side {
+        padding-left: 70px;
+        padding-right: 70px;
+        width: 25%;
+      }
+
+      /* Middle column */
+      .column.middle {
+        padding-left: 70px;
+        padding-right: 70px;
+        width: 70%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column.side,
+        .column.middle {
+          width: 100%;
+        }
+      }
+
+      .btn-text-center {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body class="preload">
+    <!-- header  -->
+
+    <header class="header">
+      <button class="header_button" id="btnNav" type="button">
+        <i class="material-icons">menu</i>
+        <a href="#"> DiabetesCare </a>
+      </button>
+      <div class="header_navs">
+        <nav class="navbar">
+          <a href="/home">Home</a>
+          <a href="/diet">Diet</a>
+          <a href="/activity">Activities</a>
+          <a href="/journal">Mental Health</a>
+          <!-- <a href="/about">About</a>
+          <a href="/profile">Profile</a> -->
+        </nav>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="nav_links">
+        <div class="logo-details">
+          <img src="{{ url_for('static', filename='logo_menu.png')}}" alt="" />
+          <span class="logo_name">DiabetesCare</span>
+        </div>
+        <a href="/home" class="nav_link">
+          <i class="material-icons">grid_view</i>
+          Home
+        </a>
+        <a href="/diet" class="nav_link">
+          <i class="material-icons">restaurant</i>
+          Diet
+        </a>
+        <a href="/activity" class="nav_link">
+          <i class="material-icons">fitness_center</i>
+          Activities
+        </a>
+        <a href="/journal" class="nav_link">
+          <i class="material-icons">spa</i>
+          Mental Health
+        </a>
+        <!-- <a href="about.html" class="nav_link">
+          <i class="material-icons">info</i>
+          About
+        </a>
+        <a href="profile.html" class="nav_link">
+          <i class="material-icons">person</i>
+          Profile
+        </a> -->
+        <a href="#" class="nav_link">
+          <i class="material-icons">logout</i>Logout
+        </a>
+      </div>
+
+      <div class="nav_overlay"></div>
+    </nav>
+
+    <!-- home section starts  -->
+    <form action="/log_food" method="POST" >
+    <section class="home_recipe" id="home_recipe">
+      <div class="content">
+        <h3>{{name|safe}}</h3>
+        <input type="hidden" name="name" value='{{name|safe}}'>
+
+      </div>
+
+      <div class="image">
+            <img src="{{ url_for('static', filename=image)}}" alt="" />
+      </div>
+    </section>
+    
+    <!-- home section ends -->
+    
+    <!-- diet   -->
+    <div class="row">
+      <div class="column side">
+        <h2>Calories</h2>
+        <p>{{calories|safe}}</p>
+      </div>
+
+      <div class="column middle">
+        <h2>Recipe</h2>
+        {% for a in steps %}
+        <p>
+          {{a|safe}}
+        </p>
+        {% endfor %}
+      </div>
+
+      <div class="column side">
+        <h2>Cooking Time</h2>
+        <p>{{time|safe}}</p>
+      </div>
+
+       <div class="column middle">
+        <h2>Ingredients</h2>
+        {% for a in ingredients %}
+        <p>
+          {{a|safe}}
+        </p>
+        {% endfor %}
+      </div>
+    </div>
+    <input type="hidden" name="whatever" value='null'>
+
+    <div class="btn-text-center">
+      <button class="btn btn-primary" action="/log_food">Log Meal</button>
+    </div>
+    <!-- <div class="finish">
+      <button style="text-align: center;" id="clear" class="btn_workout" action="/log_food">Log meal</button> 
+    </div> -->
+    </form>
+    <br />
+    <br />
+    <!-- javascript -->
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

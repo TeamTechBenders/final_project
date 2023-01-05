@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='home.css')}}">
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">DiabetesCare</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Health</a></li>
+        <li><a href="#">Reminder</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="self_assessment.html">Self-Assessment</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Your Health always deserves the best!</div>
+    <div class="btns">
+      <button>Glucose Level</button>
+      <button>Blood Pressure</button>
+      <form action="/home" method="post">
+        <button type="submit" name="button">Progress Check! </button>
+      </form>
+      <div class="data">
+      {{ data_var|safe }}
+    </div>
+  </div>
+</body>
+</html>

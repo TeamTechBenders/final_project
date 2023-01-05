@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Consent form</title>
+ <!-- CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+ <body>
+  <section class="container">
+    <div class="form_consent login">
+       <div class="FixedHeightContainer">
+        <form action="/consent_confirmation" method="GET">
+
+            <h1>Consent Form</h1>
+            <div class="Content">
+              <br />
+              <p>
+                DiabetiesCare is an app which is used for tracking, it analyzes
+                and collects your diabetes information according to the health
+                data provided by you in the self-assessment. DiabetiesCare will
+                gather data such as weight, height, age, health problems,
+                medicines, and lifestyle through the application user interface.
+              </p>        
+              <br />
+              <p>
+                The purpose of collecting this information through the
+                assessment is to enable the user to create an account on
+                DiabetiesCare by which they can receive customized service based
+                on it.
+              </p>
+              <br />
+              <p>
+                In what conditions will personal information be shared? <br />
+              </p>
+
+              <p>
+                - Personal data is only disclosed when it is required for legal
+                concerns or investigations. <br />
+                - To safeguard and defend the application's rights or property.
+                <br />
+                - To investigate or help in the prevention of any law violation.
+                <br />
+                - We ensure that no personal information submitted will be sold,
+                rented, or transferred to a third party otherwise.
+              </p>
+
+              <br />
+            <input name="check" type="checkbox" id="agreement" name="agreenment" value="agreement" required/>
+            <label for="agreement"> <b>By ticking the box, you agree and consent to the privacy practices mentioned here.<b></label>
+            </p>
+            <div style="text-align: center">
+              <div class="field_consent button-field">
+                <button class="submit-link" formaction="/self_assessment">
+                  Next
+                </button>
+              </div>
+            </div>         
+          </form>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>

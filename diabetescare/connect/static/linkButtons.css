@@ -1,0 +1,8 @@
+.link-btn:hover {
+    color: black;
+    background: lightblue;
+}
+.btn-save:hover {
+    color: white;
+    background: #265df2;
+}
